@@ -7,9 +7,9 @@ export class BlogForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            title: props.blog ? props.blog.title : '',
-            body: props.blog ? props.blog.body : '',
-            createdAt: props.blog ? moment(props.blog.createdAt) : moment(),
+            title: this.props.blog ? this.props.blog.title : '',
+            body: this.props.blog ? this.props.blog.body : '',
+            createdAt: this.props.blog ? moment(this.props.blog.createdAt) : moment(),
             calendarFocused: false,
             error: ''
         }
@@ -28,9 +28,18 @@ export class BlogForm extends React.Component {
     onFocusChange = ({ focused }) => {
         this.setState(() => ({ calendarFocused: focused }))
     }
-    onSubmit = (blog) => {
+    onSubmit = (e) => {
         e.preventDefault()
-        this.props.onSubmit(blog)
+        if (!this.state.title || !this.state.body) {
+            this.setState(() => ({ error: 'Please fill out Title AND Body' }))
+        } else {
+            this.setState(() => ({ error: '' }))
+            this.props.onSubmit({
+                title: this.state.title,
+                body: this.state.body,
+                createdAt: this.state.createdAt.valueOf()
+            })
+        }
     }
     render() {
         return (

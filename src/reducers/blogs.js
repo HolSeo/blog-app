@@ -3,9 +3,7 @@ const defaultblogsReducerState = []
 const blogsReducer = (state = defaultblogsReducerState, action) => {
     switch (action.type) {
         case 'ADD_BLOG':
-            return {
-                type: 'ADD'
-            }
+            return [...state, action.blog]
         default:
             return state
     }

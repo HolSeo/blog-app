@@ -4,8 +4,8 @@ import { startAddBlog } from '../actions/blogs'
 import BlogForm from './BlogForm'
 
 export class AddBlogPage extends React.Component {
-    onSubmit(blog) {
-        // this.props.startAddBlog(blog)
+    onSubmit = (blog) => {
+        this.props.startAddBlog(blog)
         this.props.history.push('/')
     }
     render() {
@@ -18,9 +18,8 @@ export class AddBlogPage extends React.Component {
     }
 }
 
-// const mapDispatchToProps = (dispatch) => ({
-//     startAddBlog: (blog) => dispatch(startAddBlog(blog))
-// })
+const mapDispatchToProps = (dispatch) => ({
+    startAddBlog: (blog) => dispatch(startAddBlog(blog))
+})
 
-// export default connect(undefined,mapDispatchToProps)(AddBlogPage)
-export default AddBlogPage
+export default connect(undefined,mapDispatchToProps)(AddBlogPage)
