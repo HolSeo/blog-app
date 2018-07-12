@@ -8,16 +8,19 @@ export const BlogList = (props) => (
             props.blogs.length === 0 ? (
                 <p>There are no blogs</p>
             ) : (
-                    props.blogs.map((blog) => {
-                    <BlogListItem key={blog.id} {...blog}/>
-                })
+                props.blogs.map((blog) => 
+                <BlogListItem key={blog.id} {...blog} />)
             )
         }
     </div>
 )
 
-const mapStateToProps = (state) => ({
-    blogs: state.blogs
-})
+const mapStateToProps = (state) => {
+    return {
+        blogs: state.blogs
+    }
+}
 
 export default connect(mapStateToProps)(BlogList)
+
+

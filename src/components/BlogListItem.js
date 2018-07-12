@@ -2,7 +2,9 @@ import React from 'react'
 
 export const BlogListItem = (props) => (
     <div>
-        <h3>{props.title}</h3>
+        Title: <h3>{props.title}</h3>
+        Body: <h3>{props.body}</h3>
+        Created: <h3>{props.createdAt}</h3>
     </div>
 )
 
