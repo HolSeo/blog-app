@@ -1,10 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export const BlogListItem = (props) => (
     <div>
-        Title: <h3>{props.title}</h3>
-        Body: <h3>{props.body}</h3>
-        Created: <h3>{props.createdAt}</h3>
+        <Link to={`edit/${props.id}`}>{props.title} - {props.body} - {props.createdAt}</Link>
     </div>
 )
 

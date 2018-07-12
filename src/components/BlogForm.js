@@ -3,13 +3,13 @@ import 'react-dates/initialize'
 import { SingleDatePicker } from 'react-dates'
 import moment from 'moment'
 
-export class BlogForm extends React.Component {
+export default class BlogForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            title: this.props.blog ? this.props.blog.title : '',
-            body: this.props.blog ? this.props.blog.body : '',
-            createdAt: this.props.blog ? moment(this.props.blog.createdAt) : moment(),
+            title: props.blog ? props.blog.title : '',
+            body: props.blog ? props.blog.body : '',
+            createdAt: props.blog ? moment(props.blog.createdAt) : moment(),
             calendarFocused: false,
             error: ''
         }
@@ -48,6 +48,7 @@ export class BlogForm extends React.Component {
                 <input 
                     type="text"
                     placeholder="Title"
+                    autoFocus
                     onChange={this.onTitleChange}
                     value={this.state.title}
                 />
@@ -69,7 +70,6 @@ export class BlogForm extends React.Component {
     }
 }
 
-export default BlogForm
 
 
 

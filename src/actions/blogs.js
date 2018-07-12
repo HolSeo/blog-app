@@ -23,17 +23,17 @@ export const startAddBlog = (blogData = {}) => {
     }
 }
 
-export const editBlogPage = (id,updates) => ({
+export const editBlog = (id,updates) => ({
     type: 'EDIT_BLOG',
     id,
     updates
 })
 
-export const startEditPage = (id, updates) => {
+export const startEditBlog = (id, updates) => {
     return (dispatch,getState) => {
         const uid = getState().auth.uid
         return database.ref(`users/${uid}/blogs/${id}`).update(updates).then(() => {
-            dispatch(editBlogPage(id,updates))
+            dispatch(editBlog(id,updates))
         })
     }
 }
