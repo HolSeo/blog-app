@@ -58,3 +58,17 @@ export const startSetBlogs = () => {
         })
     }
 }
+
+export const removeBlog = (id)  => ({
+    type: 'REMOVE_BLOG',
+    id
+})
+
+export const startRemoveBlog = (id) => {
+    return (dispatch,getState) => {
+        const uid = getState().auth.uid
+        return database.ref(`users/${uid}/blogs/${id}`).remove().then(() => {
+            dispatch(removeBlog(id))
+        })
+    }
+}

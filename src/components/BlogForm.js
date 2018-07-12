@@ -57,6 +57,8 @@ export default class BlogForm extends React.Component {
                     onDateChange={this.onDateChange}
                     focused={this.state.calendarFocused}
                     onFocusChange={this.onFocusChange}
+                    numberOfMonths={1}
+                    isOutsideRange={() => false}
                 />
                 <textarea
                     placeholder="Body"
@@ -71,118 +73,3 @@ export default class BlogForm extends React.Component {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React from 'react'
-// import moment from 'moment'
-// import 'react-dates/initialize'
-// import { SingleDatePicker } from 'react-dates'
-
-// export class BlogForm extends React.Component {
-//     state = {
-//         title: '',
-//         body: '',
-//         createdAt: moment(),
-//         calendarFocused: false,
-//         error: ''
-//     }
-
-//     onTitleChange = (e) => {
-//         const title = e.target.value
-//         this.setState(() => ({ title }))
-//     }
-//     onBodyChange = (e) => {
-//         const body = e.target.value
-//         this.setState(() => ({ body }))
-//     }
-//     onDateChange = (createdAt) => {
-//         this.setState(() => ({ createdAt }))
-//     }
-//     onFocusChange = ({ focused }) => {
-//         this.setState(() => ({ calendarFocused: focused}))
-//     }
-//     onSubmit = (e) => {
-//         e.preventDefault()
-//         if (!this.state.description || !this.state.amount) {
-//             this.setState(() => ({ error: 'Please provide description and amount' }))
-//         } else {
-//             this.setState(() => ({ error: '' }))
-//             this.props.onSubmit({
-//                 title: this.state.title,
-//                 body: this.state.body,
-//                 createdAt: this.state.createdAt.valueOf()
-//             })
-//         }
-//     }
-
-//     render() {
-//         return (
-//             <form onSubmit={this.onSubmit}>
-//                 {this.state.error && <p>{this.state.error}</p>}
-//                 <input
-//                     type="text"
-//                     placeholder="Title"
-//                     autoFocus
-//                     value={this.state.title}
-//                     onChange={this.onTitleChange}
-//                 />
-//                 <SingleDatePicker
-//                     date={this.state.createdAt}
-//                     onDateChange={this.onDateChange}
-//                     focused={this.state.calendarFocused}
-//                     onFocusChange={this.onFocusChange}
-//                     numberOfMonths={1}
-//                     isOutsideRange={() => false}
-//                 />
-//                 <textarea
-//                     placeholder="Add the body of your blog."
-//                     onChange={this.onBodyChange}
-//                     value={this.state.body}
-//                 >
-//                 </textarea>
-//                 <button>Save Blog</button>
-//             </form>
-//         )
-//     }
-// }
-
-// export default BlogForm

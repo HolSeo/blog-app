@@ -1,9 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import BlogListItem from './BlogListItem'
+import getVisibleBlogs from '../selectors/getVisibleBlogs'
+
 
 export const BlogList = (props) => (
     <div>
+        <Link to="/create">Add Blog</Link>
         {
             props.blogs.length === 0 ? (
                 <p>There are no blogs</p>
@@ -17,7 +21,7 @@ export const BlogList = (props) => (
 
 const mapStateToProps = (state) => {
     return {
-        blogs: state.blogs
+        blogs: getVisibleBlogs(state.blogs,state.filters)
     }
 }
 
