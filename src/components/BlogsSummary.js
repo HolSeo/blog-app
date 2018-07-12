@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 
 export const BlogsSummary = (props) => (
     <div>
-        <h1>You have {props.blogs.length} blogs.</h1>
+        <h1>You have {props.blogs.length} blogs in total.</h1>
     </div>
 )
 
