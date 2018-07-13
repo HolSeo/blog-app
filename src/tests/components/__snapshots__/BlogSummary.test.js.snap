@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render BlogSummary correctly 1`] = `
+<div>
+  <h1>
+    You have 
+    3
+     blogs in total.
+  </h1>
+</div>
+`;

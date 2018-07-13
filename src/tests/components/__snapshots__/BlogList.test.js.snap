@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render BlogList correctly with blogs 1`] = `
+<div>
+  <Link
+    replace={false}
+    to="/create"
+  >
+    Add Blog
+  </Link>
+  <BlogListItem
+    body="This is first one!"
+    createdAt={0}
+    id="1"
+    key="1"
+    title="Title One"
+  />
+  <BlogListItem
+    body="This is second one!"
+    createdAt={259200000}
+    id="2"
+    key="2"
+    title="Title Two"
+  />
+  <BlogListItem
+    body="This is third one!"
+    createdAt={-432000000}
+    id="3"
+    key="3"
+    title="Title Three"
+  />
+</div>
+`;
+
+exports[`should render BlogList message with no blogs 1`] = `
+<div>
+  <Link
+    replace={false}
+    to="/create"
+  >
+    Add Blog
+  </Link>
+  <p>
+    There are no blogs
+  </p>
+</div>
+`;
