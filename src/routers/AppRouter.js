@@ -8,6 +8,7 @@ import AddBlogPage from '../components/AddBlogPage'
 import PrivateRoute from './PrivateRoute'
 import PublicRoute from './PublicRoute'
 import EditBlogPage from '../components/EditBlogPage'
+import ReadBlogPage from '../components/ReadBlogPage'
 
 export const history = createHistory()
 
@@ -19,6 +20,7 @@ const AppRouter = () => (
                 <PrivateRoute path="/dashboard" component={DashboardPage} />
                 <PrivateRoute path="/create" component={AddBlogPage} />
                 <PrivateRoute path="/edit/:id" component={EditBlogPage}/>
+                <PrivateRoute path="/read/:id" component={ReadBlogPage} />
                 <Route component={NotFoundPage} />
             </Switch>
         </div>

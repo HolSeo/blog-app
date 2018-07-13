@@ -11,6 +11,7 @@ export default class BlogForm extends React.Component {
             body: props.blog ? props.blog.body : '',
             createdAt: props.blog ? moment(props.blog.createdAt) : moment(),
             calendarFocused: false,
+            name: props.blog ? props.blog.name : '',
             error: ''
         }
     }
@@ -28,16 +29,21 @@ export default class BlogForm extends React.Component {
     onFocusChange = ({ focused }) => {
         this.setState(() => ({ calendarFocused: focused }))
     }
+    onNameChange= (e) => {
+        const name = e.target.value
+        this.setState(() => ({ name }))
+    }
     onSubmit = (e) => {
         e.preventDefault()
-        if (!this.state.title || !this.state.body) {
+        if (!this.state.title || !this.state.body || !this.state.name) {
             this.setState(() => ({ error: 'Please fill out Title AND Body.' }))
         } else {
             this.setState(() => ({ error: '' }))
             this.props.onSubmit({
                 title: this.state.title,
                 body: this.state.body,
-                createdAt: this.state.createdAt.valueOf()
+                createdAt: this.state.createdAt.valueOf(),
+                name: this.state.name
             })
         }
     }
@@ -66,6 +72,12 @@ export default class BlogForm extends React.Component {
                     value={this.state.body}
                 >
                 </textarea>
+                <input 
+                    type="text"
+                    placeholder="Author Name"
+                    onChange={this.onNameChange}
+                    value={this.state.name}
+                />
                 <button>Save Blog</button>
             </form>
         )

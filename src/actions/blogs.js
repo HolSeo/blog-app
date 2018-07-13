@@ -11,9 +11,10 @@ export const startAddBlog = (blogData = {}) => {
         const {
             title =  '',
             body = '',
-            createdAt = 0
+            createdAt = 0,
+            name = ''
         } = blogData
-        const blog = { title, body, createdAt }
+        const blog = { title, body, createdAt, name }
         return database.ref(`users/${uid}/blogs`).push(blog).then((ref) => {
             dispatch(addBlog({
                 id: ref.key,

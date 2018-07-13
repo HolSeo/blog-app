@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import BlogForm from './BlogForm'
 import { startEditBlog, startRemoveBlog } from '../actions/blogs'
 
@@ -15,6 +16,7 @@ export class EditBlogPage extends React.Component {
     render() {
         return (
             <div>
+                <Link to={`/read/${this.props.blog.id}`}>Post readable at http://app.com/read/{this.props.blog.id}</Link>
                 <BlogForm 
                     blog={this.props.blog} 
                     onSubmit={this.onSubmit}

@@ -11,7 +11,7 @@ export class AddBlogPage extends React.Component {
     render() {
         return (
             <div>
-                Add Blog Page
+                <h1>Add Blog Page</h1>
                 <BlogForm onSubmit={this.onSubmit}/>
             </div>
         )
