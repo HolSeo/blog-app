@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render EditBlogPage correctly 1`] = `
+<div>
+  <BlogForm
+    blog={
+      Object {
+        "body": "This is first one!",
+        "createdAt": 0,
+        "id": "1",
+        "title": "Title One",
+      }
+    }
+    onSubmit={[Function]}
+  />
+  <button
+    onClick={[Function]}
+  >
+    Remove Blog
+  </button>
+</div>
+`;
