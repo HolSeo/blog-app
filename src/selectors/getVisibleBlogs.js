@@ -1,6 +1,6 @@
 import moment from 'moment'
 
-const getVisiblBlogs = (blogs,filters) => {
+const getVisibleBlogs = (blogs,filters) => {
     return blogs.filter((blog) => {
         const createdAtMoment = moment(blog.createdAt)
         const startDateMatch = filters.startDate ? filters.startDate.isSameOrBefore(createdAtMoment, 'day') : true
@@ -13,4 +13,4 @@ const getVisiblBlogs = (blogs,filters) => {
     })
 }
 
-export default getVisiblBlogs
+export default getVisibleBlogs
