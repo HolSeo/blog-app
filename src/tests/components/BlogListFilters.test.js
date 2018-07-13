@@ -18,6 +18,10 @@ beforeEach(() => {
     />)
 })
 
+test('should render BlogListFilters correctly', () => {
+    expect(wrapper).toMatchSnapshot()
+})
+
 test('should call setTextFilter with correct arguments', () => {
     wrapper.find('input').simulate('change', {
         target: { value: 'testing' }
@@ -25,10 +29,16 @@ test('should call setTextFilter with correct arguments', () => {
     expect(setTextFilter).toHaveBeenLastCalledWith('testing')
 })
 
-test('should call setStartDate with correct arguments', () => {
+test('should call setStartDate, setEndDate with correct arguments', () => {
     const startDate = moment(0)
     const endDate = moment(0).add(3,'days')
     wrapper.find('withStyles(DateRangePicker)').prop('onDatesChange')({ startDate,endDate })
     expect(setStartDate).toHaveBeenLastCalledWith(startDate)
     expect(setEndDate).toHaveBeenLastCalledWith(endDate)
+})
+
+test('should handle date changes', () =>{
+    const calendarFocused = 'endDate'
+    wrapper.find('withStyles(DateRangePicker)').prop('onFocusChange')(calendarFocused)
+    expect(wrapper.state('calendarFocused')).toBe(calendarFocused)
 })

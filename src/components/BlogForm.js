@@ -31,7 +31,7 @@ export default class BlogForm extends React.Component {
     onSubmit = (e) => {
         e.preventDefault()
         if (!this.state.title || !this.state.body) {
-            this.setState(() => ({ error: 'Please fill out Title AND Body' }))
+            this.setState(() => ({ error: 'Please fill out Title AND Body.' }))
         } else {
             this.setState(() => ({ error: '' }))
             this.props.onSubmit({
