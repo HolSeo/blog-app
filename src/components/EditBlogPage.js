@@ -19,7 +19,7 @@ export class EditBlogPage extends React.Component {
                 <div className="page-header__edit">
                     <div className="content-container">
                         <h1 className="page-header__title">Edit Expense</h1>
-                        <h3> <Link to={`/read/${this.props.blog.id}`}>Post readable at https://myblogger-seo.herokuapp.com/read/{this.props.blog.id}</Link> </h3>
+                        <h3> <Link to={`/read/${this.props.blog.id}`}>This blog post is readable at https://myblogger-seo.herokuapp.com/read/{this.props.blog.id}. You can share it with others!</Link> </h3>
                     </div>
                 </div>
                 <div className="content-container">
