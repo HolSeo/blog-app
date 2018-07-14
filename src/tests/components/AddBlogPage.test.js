@@ -13,6 +13,7 @@ beforeEach(() => {
 
 test('should render AddBlogPage correctly', () => {
     expect(wrapper).toMatchSnapshot()
+    expect(wrapper).toMatchSnapshot()
 })
 
 test('should startAddBlog be called correctly', () => {
