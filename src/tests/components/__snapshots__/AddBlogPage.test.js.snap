@@ -2,9 +2,25 @@
 
 exports[`should render AddBlogPage correctly 1`] = `
 <div>
-  Add Blog Page
-  <BlogForm
-    onSubmit={[Function]}
-  />
+  <div
+    className="page-header"
+  >
+    <div
+      className="content-container"
+    >
+      <h1
+        className="page-header__title"
+      >
+        Add Blog
+      </h1>
+    </div>
+  </div>
+  <div
+    className="content-container"
+  >
+    <BlogForm
+      onSubmit={[Function]}
+    />
+  </div>
 </div>
 `;

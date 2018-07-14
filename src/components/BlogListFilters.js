@@ -20,25 +20,32 @@ export class BlogListFilters extends React.Component {
     }
     render() {
         return (
-            <div>
-                <input 
-                    type="text" 
-                    placeholder="search" 
-                    onChange={this.onChange}
-                    value={this.props.filters.text}
-                />
-                <DateRangePicker 
-                    startDate={this.props.filters.startDate}
-                    startDateId="startDate"
-                    endDate={this.props.filters.endDate}
-                    endDateId="endDate"
-                    onDatesChange={this.onDatesChange}
-                    focusedInput={this.state.calendarFocused}
-                    onFocusChange={this.onFocusChange}
-                    showClearDates={true}
-                    numberOfMonths={1}
-                    isOutsideRange={() => false}
-                />
+            <div className="content-container">
+                <div className="input-group">
+                    <div className="input-group__item">
+                        <input
+                            className="text-input"
+                            type="text"
+                            placeholder="Search by Title"
+                            onChange={this.onChange}
+                            value={this.props.filters.text}
+                        />
+                    </div>
+                    <div className="input-group__item">
+                        <DateRangePicker
+                            startDate={this.props.filters.startDate}
+                            startDateId="startDate"
+                            endDate={this.props.filters.endDate}
+                            endDateId="endDate"
+                            onDatesChange={this.onDatesChange}
+                            focusedInput={this.state.calendarFocused}
+                            onFocusChange={this.onFocusChange}
+                            showClearDates={true}
+                            numberOfMonths={1}
+                            isOutsideRange={() => false}
+                        />
+                    </div>
+                </div>
             </div>
         )
     }

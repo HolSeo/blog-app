@@ -4,8 +4,18 @@
     padding: $l-size 0;
 }
 
+.page-header__edit {
+    background: $off-white;
+    margin-bottom: $l-size;
+    padding: $m-size 0;
+}
+
 .page-header__actions {
     margin-top: $m-size;
+}
+
+.page-header__summary {
+    margin-top: 0.5rem;
 }
 
 .page-header__title {
@@ -14,4 +24,9 @@
     span {
         font-weight: bold;
     }
+}
+
+.page-header__container {
+    display: flex;
+    justify-content: space-between;
 }

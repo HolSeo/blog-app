@@ -16,12 +16,19 @@ export class EditBlogPage extends React.Component {
     render() {
         return (
             <div>
-                <Link to={`/read/${this.props.blog.id}`}>Post readable at http://app.com/read/{this.props.blog.id}</Link>
-                <BlogForm 
-                    blog={this.props.blog} 
-                    onSubmit={this.onSubmit}
-                />
-                <button onClick={this.onRemove}>Remove Blog</button>
+                <div className="page-header__edit">
+                    <div className="content-container">
+                        <h1 className="page-header__title">Edit Expense</h1>
+                        <h3> <Link to={`/read/${this.props.blog.id}`}>Post readable at http://app.com/read/{this.props.blog.id}</Link> </h3>
+                    </div>
+                </div>
+                <div className="content-container">
+                    <BlogForm
+                        blog={this.props.blog}
+                        onSubmit={this.onSubmit}
+                    />
+                    <button className="button button--secondary" onClick={this.onRemove}>Remove Blog</button>
+                </div>
             </div>
         )
     }

@@ -2,10 +2,12 @@
 
 exports[`should render BlogForm correctly 1`] = `
 <form
+  className="form"
   onSubmit={[Function]}
 >
   <input
     autoFocus={true}
+    className="text-input"
     onChange={[Function]}
     placeholder="Title"
     type="text"
@@ -100,25 +102,41 @@ exports[`should render BlogForm correctly 1`] = `
     withPortal={false}
   />
   <textarea
+    className="textarea"
     onChange={[Function]}
     placeholder="Body"
     value=""
   />
-  <button>
-    Save Blog
-  </button>
+  <input
+    className="text-input"
+    onChange={[Function]}
+    placeholder="Author Name"
+    type="text"
+    value=""
+  />
+  <div>
+    <button
+      className="button"
+    >
+      Save Blog
+    </button>
+  </div>
 </form>
 `;
 
 exports[`should render error for invalid input 1`] = `
 <form
+  className="form"
   onSubmit={[Function]}
 >
-  <p>
+  <p
+    className="form_error"
+  >
     Please fill out Title AND Body.
   </p>
   <input
     autoFocus={true}
+    className="text-input"
     onChange={[Function]}
     placeholder="Title"
     type="text"
@@ -213,22 +231,36 @@ exports[`should render error for invalid input 1`] = `
     withPortal={false}
   />
   <textarea
+    className="textarea"
     onChange={[Function]}
     placeholder="Body"
     value=""
   />
-  <button>
-    Save Blog
-  </button>
+  <input
+    className="text-input"
+    onChange={[Function]}
+    placeholder="Author Name"
+    type="text"
+    value=""
+  />
+  <div>
+    <button
+      className="button"
+    >
+      Save Blog
+    </button>
+  </div>
 </form>
 `;
 
 exports[`should render with blog data 1`] = `
 <form
+  className="form"
   onSubmit={[Function]}
 >
   <input
     autoFocus={true}
+    className="text-input"
     onChange={[Function]}
     placeholder="Title"
     type="text"
@@ -323,12 +355,23 @@ exports[`should render with blog data 1`] = `
     withPortal={false}
   />
   <textarea
+    className="textarea"
     onChange={[Function]}
     placeholder="Body"
     value="This is first one!"
   />
-  <button>
-    Save Blog
-  </button>
+  <input
+    className="text-input"
+    onChange={[Function]}
+    placeholder="Author Name"
+    type="text"
+  />
+  <div>
+    <button
+      className="button"
+    >
+      Save Blog
+    </button>
+  </div>
 </form>
 `;

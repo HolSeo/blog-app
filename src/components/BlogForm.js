@@ -49,9 +49,10 @@ export default class BlogForm extends React.Component {
     }
     render() {
         return (
-            <form onSubmit={this.onSubmit}>
-                {this.state.error && <p>{this.state.error}</p>}
+            <form className="form" onSubmit={this.onSubmit}>
+                {this.state.error && <p className="form_error">{this.state.error}</p>}
                 <input 
+                    className="text-input"
                     type="text"
                     placeholder="Title"
                     autoFocus
@@ -67,18 +68,22 @@ export default class BlogForm extends React.Component {
                     isOutsideRange={() => false}
                 />
                 <textarea
+                    className="textarea"
                     placeholder="Body"
                     onChange={this.onBodyChange}
                     value={this.state.body}
                 >
                 </textarea>
                 <input 
+                    className="text-input"
                     type="text"
                     placeholder="Author Name"
                     onChange={this.onNameChange}
                     value={this.state.name}
                 />
-                <button>Save Blog</button>
+                <div>
+                    <button className="button">Save Blog</button>
+                </div>
             </form>
         )
     }
