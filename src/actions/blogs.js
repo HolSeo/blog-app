@@ -1,4 +1,5 @@
 import database from '../firebase/firebase'
+import { firebase } from '../firebase/firebase'
 
 export const addBlog= (blog) => ({
     type: 'ADD_BLOG',
@@ -73,3 +74,41 @@ export const startRemoveBlog = (id) => {
         })
     }
 }
+
+export const readBlog = (blog) => ({
+    type: 'READ_BLOG',
+    blog
+})
+
+let shownBlog
+
+export const startReadBlog = (id) => {
+    return (dispatch) => {
+        let blogList = []
+        database.ref(`users`).once('value').then((snapshot) => {
+            snapshot.forEach((childSnapshot) => {
+                childSnapshot.forEach((blog) => {
+                    blogList.push(blog.val())
+                })
+            })
+            blogList.forEach((blog) => {
+                if (Object.keys(blog).findIndex((key) => key === id) !== -1) {
+                    Object.keys(blog).forEach((key) => {
+                        if (key === id) {
+                            shownBlog = {
+                                id,
+                                title: blog[key].title,
+                                name: blog[key].name,
+                                createdAt: blog[key].createdAt,
+                                body: blog[key].body
+                            }
+                        }
+                    });
+                }
+            })
+            dispatch(readBlog(shownBlog))
+        })
+    }
+}
+
+

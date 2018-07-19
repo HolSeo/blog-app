@@ -1,3 +1,4 @@
+
 const defaultblogsReducerState = []
 
 const blogsReducer = (state = defaultblogsReducerState, action) => {
@@ -17,6 +18,8 @@ const blogsReducer = (state = defaultblogsReducerState, action) => {
                     return blog
                 }
             })
+        case 'READ_BLOG':
+            return [...state,action.blog]
         case 'REMOVE_BLOG':
             return state.filter((blog) => blog.id !== action.id)
         default:
