@@ -1,9 +1,14 @@
 # blog-app
 
 ## Description
-MyBlogger is an application, built off React-Redux, that helps you create your own personal blog. You can write about anything and it will generate a URL that anybody can access and see! Just sign up using your Google account and write away!
+MyBlogger is an application built off React-Redux with Google Authentication using Firebase. MyBlogger helps you create your own personal blog. It will generate a public URL that anybody can view once you save your blog! 
 
-### Todos
-- Finish testing
-- Styling
-- Deployment
+### Live Link on Heroku
+https://myblogger-seo.herokuapp.com/
+
+### Features
+- React & Redux
+- Firebase for database and authentication.
+- SCSS for styling.
+- JEST for testing.
+- Webpack and Babel
