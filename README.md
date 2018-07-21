@@ -12,3 +12,4 @@ https://myblogger-seo.herokuapp.com/
 - SCSS for styling.
 - JEST for testing.
 - Webpack and Babel
+- Mobile Friendly
