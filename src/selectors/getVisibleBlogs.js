@@ -1,6 +1,14 @@
 import moment from 'moment'
 
 const getVisibleBlogs = (blogs,filters) => {
+    blogs = blogs.reduce(function (previous, current) {
+        let object = previous.filter(object => object.id === current.id);
+        if (object.length == 0) {
+            previous.push(current);
+        }
+        return previous;
+    }, []);
+
     return blogs.filter((blog) => {
         const createdAtMoment = moment(blog.createdAt)
         const startDateMatch = filters.startDate ? filters.startDate.isSameOrBefore(createdAtMoment, 'day') : true

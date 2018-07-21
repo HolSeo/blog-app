@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import moment from 'moment'
-import { ReadBlogPageForm } from './ReadBlogPageForm';
 import database from '../firebase/firebase'
 import { startSetBlogs } from '../actions/blogs'
 import { login } from '../actions/auth'
@@ -31,7 +30,7 @@ export class ReadBlogPage extends React.Component {
 
 
 const mapStateToProps = (state, props) => {
-    if (state.blogs.length > 1) {
+    if (state.blogs.length > 0) {
         return {
             blog: state.blogs.find((blog) => blog.id === props.match.params.id),
             id: state.auth.uid
